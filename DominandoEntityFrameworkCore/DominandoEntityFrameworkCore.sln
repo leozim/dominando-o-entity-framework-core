@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DominandoEFCore", "DominandoEFCore.csproj", "{AF76958A-365E-D52C-7190-9B2700E4A16D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF76958A-365E-D52C-7190-9B2700E4A16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF76958A-365E-D52C-7190-9B2700E4A16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF76958A-365E-D52C-7190-9B2700E4A16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF76958A-365E-D52C-7190-9B2700E4A16D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02336289-1458-4DBE-A621-119C21922D25}
+	EndGlobalSection
+EndGlobal
