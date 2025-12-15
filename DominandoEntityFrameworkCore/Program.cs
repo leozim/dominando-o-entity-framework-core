@@ -1,7 +1,16 @@
-﻿internal class Program
+﻿using DominandoEFCore.Data;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        EnsureCreatedAndDelete();
+    }
+
+    private static void EnsureCreatedAndDelete()
+    {
+        using var db = new ApplicationContext();
+        db.Database.EnsureDeleted();
+        db.Database.EnsureCreated();
     }
 }
