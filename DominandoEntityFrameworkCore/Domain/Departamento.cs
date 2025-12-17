@@ -8,5 +8,5 @@ public class Departamento
     public string Descricao { get; set; }
     public bool Ativo { get; set; }
 
-    public List<Funcionario> Funcionarios { get; set; }
+    public virtual List<Funcionario> Funcionarios { get; set; }
 }

@@ -37,7 +37,7 @@ internal class Program
                 // ToList() carrega os dados na memória de forma antecipada fechando a conexão da consulta.
                 // com isso "burlamos" a necessidade de ativar o Mars ao final da connection string com:
                 // MultipleActiveResultSets=True
-                // Permite varios lotes de consulta em uma úinica conexão
+                // Permite varios lotes de consulta em uma única conexão
                 .ToList();
 
             foreach (var departamento in departamentos)
