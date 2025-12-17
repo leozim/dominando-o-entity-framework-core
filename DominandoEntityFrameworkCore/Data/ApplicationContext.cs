@@ -16,7 +16,7 @@ public class ApplicationContext : DbContext
         optionsBuilder
             .UseSqlServer(strConnection)
             .EnableSensitiveDataLogging()
-            .UseLazyLoadingProxies()
+            // .UseLazyLoadingProxies()
             .LogTo(Console.WriteLine, LogLevel.Information);
     }
 }
