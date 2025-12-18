@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DominandoEFCore", "Dominand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultaStoredProcedure", "ConsultaStoredProcedure\ConsultaStoredProcedure.csproj", "{42271713-FAA2-4F9E-AEE0-2F6C05213D47}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{A9C7309A-4E39-4179-8495-D35FFE78E48A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{42271713-FAA2-4F9E-AEE0-2F6C05213D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42271713-FAA2-4F9E-AEE0-2F6C05213D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42271713-FAA2-4F9E-AEE0-2F6C05213D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C7309A-4E39-4179-8495-D35FFE78E48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C7309A-4E39-4179-8495-D35FFE78E48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C7309A-4E39-4179-8495-D35FFE78E48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C7309A-4E39-4179-8495-D35FFE78E48A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
