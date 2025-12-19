@@ -19,7 +19,7 @@ internal class Program
         // CriarStoredProcedure();
         // InserirDadosViaProcedure();
         // CriarStoredProcedureDeConsulta();
-        ConsultaViaProcedure();
+        // ConsultaViaProcedure();
     }
 
     private static void ConsultaViaProcedure()
