@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultaStoredProcedure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{A9C7309A-4E39-4179-8495-D35FFE78E48A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeldoDeDados", "ModeldoDeDados\ModeldoDeDados.csproj", "{B6EE4A0B-8ECF-4523-8A12-7355293DB129}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloDeDados", "ModeloDeDados\ModeloDeDados.csproj", "{B6EE4A0B-8ECF-4523-8A12-7355293DB129}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

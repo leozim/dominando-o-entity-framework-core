@@ -8,7 +8,8 @@ public class Conversor
     public bool Ativo { get; set; }
     public bool Excluido { get; set; }
     public Versao Versao { get; set; }
-    public IPAddress EnderecoIP { get; set; }
+    public Status Status { get; set; }
+    public IPAddress? EnderecoIP { get; set; }
 }
 
 public enum Versao
@@ -18,4 +19,11 @@ public enum Versao
     EFCore3,
     EFCore4,
     EFCore5,
+}
+
+public enum Status
+{
+    Analise,
+    Enviado,
+    Devolvido
 }

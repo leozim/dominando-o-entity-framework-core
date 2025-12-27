@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Logging;
 using ModeloDeDados.Domain;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using ModeloDeDados.Configurations;
+using ModeloDeDados.Converters;
 
-namespace ModeldoDeDados.Data;
+namespace ModeloDeDados.Data;
 
 public class ApplicationContext : DbContext
 {
@@ -12,6 +15,8 @@ public class ApplicationContext : DbContext
     public DbSet<Funcionario> Funcionarios { get; set; }
     public DbSet<Estado> Estados { get; set; }
     public DbSet<Conversor> Conversores { get; set; }
+    public DbSet<Cliente> Clientes { get; set; }
+    // public DbSet<Endereco> Enderecos { get; set; }
 
     protected override  void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -62,7 +67,8 @@ public class ApplicationContext : DbContext
         modelBuilder.HasDefaultSchema("cadastros");
         modelBuilder.Entity<Estado>().ToTable("Estados", "SegundoEsquema");
         */
-
+        
+        /*
         var conversao = new ValueConverter<Versao, string>(p => p.ToString(), v => Enum.Parse<Versao>(v));
         
         // Vem do namespace Microsoft.EntityFrameworkCore.Storage.ValueConversion
@@ -74,6 +80,27 @@ public class ApplicationContext : DbContext
             // .HasConversion(conversao);
             // .HasConversion(p => p.ToString(), v => Enum.Parse<Versao>(v));
             // .HasConversion(p => p.ToString(), v => (Versao)Enum.Parse(typeof(Versao), v)); // Código do instrutor
-        // .HasConversion<string>();
+            // .HasConversion<string>();
+
+            modelBuilder.Entity<Conversor>()
+                .Property(p => p.Status)
+                .HasConversion(new ConversorCustomizado());
+                
+        modelBuilder.Entity<Departamento>().Property<DateTime>("UltimaAtualizacao");
+        */
+
+        /*modelBuilder.Entity<Cliente>(p =>
+        {
+            p.OwnsOne(end => end.Endereco, e =>
+            {
+                // posso fazer o mesmo com os demais campos
+                e.Property(p => p.Bairro).HasColumnName("Bairro");
+                // e.ToTable("Endereco"); // table split
+            });
+        });*/
+
+        // modelBuilder.ApplyConfiguration(new ClienteConfiguration());
+        // modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationContext).Assembly);
     }
 }
