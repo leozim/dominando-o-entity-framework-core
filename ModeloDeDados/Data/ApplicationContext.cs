@@ -17,6 +17,8 @@ public class ApplicationContext : DbContext
     public DbSet<Conversor> Conversores { get; set; }
     public DbSet<Cliente> Clientes { get; set; }
     // public DbSet<Endereco> Enderecos { get; set; }
+    public DbSet<Ator> Atores { get; set; }
+    public DbSet<Filme> Filmes { get; set; }
 
     protected override  void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

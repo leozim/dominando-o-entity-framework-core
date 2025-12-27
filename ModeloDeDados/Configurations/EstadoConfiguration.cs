@@ -16,5 +16,11 @@ public class EstadoConfiguration : IEntityTypeConfiguration<Estado>
         // Com o AutoInclude() não é necessário usar o Include() através do dbContext para
         // o carregamento adiantado(eager).
         builder.Navigation(e => e.Governador).AutoInclude();
+
+        builder
+            .HasMany(e => e.Cidades)
+            .WithOne(c => c.Estado)
+            .IsRequired(); // permite inserir Cidade sem a existencia de um Estado caso passe 'false' como parametro
+        // .OnDelete(DeleteBehavior.Restrict);
     }
 }

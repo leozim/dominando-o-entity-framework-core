@@ -7,6 +7,8 @@ public class Estado
     // Ao não colocar o GovernadorId implicitamente dizemos que Estado é a classe não dependente(dominante) da relação
     // pois em teoria um Governador depende da existência de um Estado, já o Estado não depende do Governador
     public Governador Governador { get; set; }
+
+    public ICollection<Cidade> Cidades { get; } = new List<Cidade>();
 }
 
 public class Governador
@@ -15,6 +17,15 @@ public class Governador
     public string Nome { get; set; }
     public int Idade { get; set; }
     public string Partido { get; set; }
+
+    public int EstadoId { get; set; }
+    public Estado Estado { get; set; }
+}
+
+public class Cidade
+{
+    public int Id { get; set; }
+    public string Nome { get; set; }
 
     public int EstadoId { get; set; }
     public Estado Estado { get; set; }

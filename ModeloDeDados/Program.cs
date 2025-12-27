@@ -14,7 +14,8 @@ internal class Program
         // ConversorCustomizado();
         // TrabalhandoComPropriedadesDeSombra();
         // TiposDePropriedades();
-        RelacionamentoUmParaUm();
+        // RelacionamentoUmParaUm();
+        RelacionamentoUmParaMuitos();
     }
     
     private static void Collation()
@@ -137,5 +138,43 @@ internal class Program
         {
             Console.WriteLine($"Estado: {est.Nome}, Governador: {est.Governador.Nome}");
         });
+    }
+    
+    private static void RelacionamentoUmParaMuitos()
+    {
+        using (var db = new ApplicationContext())
+        {
+            db.Database.EnsureDeleted();
+            db.Database.EnsureCreated();
+
+            var estado = new Estado
+            {
+                Nome = "São Paulo",
+                Governador = new Governador {Nome = "Leonel Brizola", Partido = "PDT"}
+            };
+
+            db.Estados.Add(estado);
+
+            db.SaveChanges();
+        }
+
+        using (var db = new ApplicationContext())
+        {
+            var estados = db.Estados.ToList();
+            
+            estados[0].Cidades.Add(new Cidade { Nome = "Sorocaba" });
+
+            db.SaveChanges();
+
+            foreach (var estado in db.Estados.Include(p => p.Cidades).AsNoTracking())
+            {
+                Console.WriteLine($"Estado: {estado.Nome}, Governador: {estado.Governador.Nome}");
+
+                foreach (var estadoCidade in estado.Cidades)
+                {
+                    Console.WriteLine($"\t Cidade: {estadoCidade.Nome}");
+                }
+            }
+        }
     }
 }
