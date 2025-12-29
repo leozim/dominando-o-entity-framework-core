@@ -20,6 +20,10 @@ public class ApplicationContext : DbContext
     public DbSet<Ator> Atores { get; set; }
     public DbSet<Filme> Filmes { get; set; }
 
+    public DbSet<Pessoa> Pessoas { get; set; }
+    public DbSet<Instrutor> Instrutores { get; set; }
+    public DbSet<Aluno> Alunos { get; set; }
+
     protected override  void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         const string strConnection = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ModeloDeDados;Integrated Security=True;pooling=True";
