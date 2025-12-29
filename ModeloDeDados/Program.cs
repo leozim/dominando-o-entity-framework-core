@@ -242,9 +242,12 @@ internal class Program
             var alunos = db.Pessoas.OfType<Aluno>().AsNoTracking().ToArray();
             
             // o que eu queria fazer nao funcinou
-            List<object> discriminators = new List<object>();
-            foreach (var p in db.Pessoas.FromSqlRaw("SELECT Id, Nome, Desde, Tecnologia, Idade, TipoPessoa, DataContrato FROM Pessoas")) discriminators.Add(p);
+            // List<dynamic> discriminators = new List<object>();
+            // foreach (var p in db.Pessoas.FromSqlRaw("SELECT Id, Nome, Desde, Tecnologia, Idade, TipoPessoa, DataContrato FROM Pessoas").Cast<dynamic>()) discriminators.Add(p);
 
+            var query = db.Pessoas.FromSqlRaw(
+                "SELECT Id, Nome, Desde, Tecnologia, Idade, TipoPessoa, DataContrato FROM Pessoas");
+            
             Console.WriteLine("Pessoas **************");
             foreach (var p in pessoas)
             {
@@ -265,9 +268,18 @@ internal class Program
             
             Console.WriteLine("Discriminator *********************");
             var options = new System.Text.Json.JsonSerializerOptions { WriteIndented = true };
-            discriminators.ForEach(d =>
+            query.ToList().ForEach(d =>
             {
-                var json = System.Text.Json.JsonSerializer.Serialize(d, options);
+                var discriminator = db.Entry(d).Property("TipoPessoa").CurrentValue;
+
+                var objToJson = new
+                {
+                    Dados = d,
+                    TipoPessoaShadow = discriminator,
+                    TipoPessoaEnum = Enum.GetName(typeof(TipoPessoa), discriminator)
+                };
+                
+                var json = System.Text.Json.JsonSerializer.Serialize(objToJson, options);
                 Console.WriteLine(json);
             });
         }
