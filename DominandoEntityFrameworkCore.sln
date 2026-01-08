@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloDeDados", "ModeloDeDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnnotations", "DataAnnotations\DataAnnotations.csproj", "{2F419728-9E05-48FE-A686-76E863BCCACD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenant", "MultiTenant\MultiTenant.csproj", "{4EAAAF0C-053E-4CAB-821C-64DEE057E1C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{2F419728-9E05-48FE-A686-76E863BCCACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F419728-9E05-48FE-A686-76E863BCCACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F419728-9E05-48FE-A686-76E863BCCACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EAAAF0C-053E-4CAB-821C-64DEE057E1C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EAAAF0C-053E-4CAB-821C-64DEE057E1C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EAAAF0C-053E-4CAB-821C-64DEE057E1C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EAAAF0C-053E-4CAB-821C-64DEE057E1C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

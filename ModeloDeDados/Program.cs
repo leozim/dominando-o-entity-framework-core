@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using ModeloDeDados.Data;
 using ModeloDeDados.Domain;
@@ -17,7 +18,7 @@ internal class Program
         // RelacionamentoUmParaUm();
         // RelacionamentoUmParaMuitos();
         // RelacionamentoMuitosParaMuitos();
-        ExemploTPH(); // Table Per Hierarchy
+        // ExemploTPH(); // Table Per Hierarchy
     }
     
     private static void Collation()
